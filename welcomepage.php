@@ -29,15 +29,18 @@ if (isset($_SESSION['id'])) {
 
 <body>
     <nav class="navbar navbar-light bg-light justify-content-between">
-        <a class="navbar-brand">Navbar</a>
+        <a class="navbar-brand">Login System</a>
         <form class="form-inline" method="post">
             <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
-            <button class="btn btn-outline-success my-2 my-sm-0 mr-2" type="submit" name="logout">LogOut</button>
-            <a href="editpage.php?id=<?php echo  $id ?>" class="btn btn-outline-success my-2 my-sm-0 mr-2" target="_blank">Edit</a>
-            <a href="delete.php?id=<?php echo  $id ?>" class="btn btn-outline-danger my-2 my-sm-0 mr-2"> Delete Account
-
-            </a>
-
+            <?php if ($name === "Your session was expired go to login page") { ?>
+                <a href="loginpage.php" class="btn btn-outline-success my-2 my-sm-0 mr-2" type="submit" name="">login</a>
+                <a href="registerpage.php" class="btn btn-outline-success my-2 my-sm-0 mr-2" type="submit" name="">register</a>
+            <?php } ?>
+            <?php if ($name != "Your session was expired go to login page") { ?>
+                <button class="btn btn-outline-success my-2 my-sm-0 mr-2" type="submit" name="logout">LogOut</button>
+                <a href="editpage.php?id=<?php echo  $id ?>" class="btn btn-outline-success my-2 my-sm-0 mr-2" target="_blank">Edit</a>
+                <a href="delete.php?id=<?php echo  $id ?>" class="btn btn-outline-danger my-2 my-sm-0 mr-2"> Delete Account</a>
+            <?php } ?>
 
         </form>
     </nav>
