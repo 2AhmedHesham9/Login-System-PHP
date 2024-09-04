@@ -15,7 +15,7 @@ include("edit.php");
 
 <body>
     <div class="card">
-        <span class="title">Leave a Comment</span>
+        <span class="title">Update Your Data</span>
         <form class="form" method="post">
             <div class="group">
                 <input placeholder="" type="text" name="username" required=""value="<?php echo  $_SESSION["username"]?>">
